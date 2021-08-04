@@ -1,6 +1,7 @@
 package com.leapfin.search;
 
-public class WorkerResult implements Comparable<WorkerResult>{
+public class WorkerResult implements Comparable<WorkerResult> {
+
     private final Long elapsedTime;
     private final Long bytesRead;
     private final String status;
@@ -39,9 +40,9 @@ public class WorkerResult implements Comparable<WorkerResult>{
     @Override
     public String toString() {
         return "WorkerResult{" +
-                "elapsedTime=" + elapsedTime +
-                ", bytesRead=" + bytesRead +
-                ", status='" + status + '\'' +
-                '}';
+            "elapsedTime=" + elapsedTime +
+            ", bytesRead=" + bytesRead +
+            ", status='" + status + '\'' +
+            '}';
     }
 }

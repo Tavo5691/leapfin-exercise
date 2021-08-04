@@ -1,7 +1,6 @@
 package com.leapfin.report;
 
 import com.leapfin.search.WorkerResult;
-
 import java.util.List;
 import java.util.stream.LongStream;
 
@@ -13,8 +12,8 @@ public class ReportCreator {
         sb.append("******************** Report ********************\n");
 
         workerResultList.stream()
-                .sorted()
-                .forEach(result -> sb.append(writeReportLine(result)));
+            .sorted()
+            .forEach(result -> sb.append(writeReportLine(result)));
 
         sb.append(String.format("average=%s B/ms\n", calculateAverageSpeed(workerResultList)));
 
@@ -29,15 +28,15 @@ public class ReportCreator {
         }
 
         return String.format("elapsed=%s ms byte_cnt=%s B status=%s\n",
-                result.getElapsedTime(), result.getBytesRead(), result.getStatus()
+            result.getElapsedTime(), result.getBytesRead(), result.getStatus()
         );
     }
 
     private static double calculateAverageSpeed(final List<WorkerResult> workerResultList) {
         return workerResultList.stream()
-                .filter(WorkerResult::isSuccessful)
-                .flatMapToLong(result -> LongStream.of(result.getProcessingSpeed()))
-                .average()
-                .orElse(0.0D);
+            .filter(WorkerResult::isSuccessful)
+            .flatMapToLong(result -> LongStream.of(result.getProcessingSpeed()))
+            .average()
+            .orElse(0.0D);
     }
 }

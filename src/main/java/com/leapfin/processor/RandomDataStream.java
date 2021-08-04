@@ -3,6 +3,7 @@ package com.leapfin.processor;
 import java.util.Random;
 
 public class RandomDataStream implements DataStream {
+
     private final Random random;
     private long bytesRead;
 

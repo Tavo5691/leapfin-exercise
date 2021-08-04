@@ -1,13 +1,12 @@
 package com.leapfin.report;
 
-import com.leapfin.search.WorkerResult;
-import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
+import com.leapfin.search.WorkerResult;
+import java.util.ArrayList;
+import java.util.List;
+import org.junit.Test;
 
 public class ReportCreatorShould {
 
@@ -25,11 +24,11 @@ public class ReportCreatorShould {
 
     private String expectedReport() {
         return "******************** Report ********************\n" +
-                "elapsed= byte_cnt= status=TIMEOUT\n" +
-                "elapsed=45000 ms byte_cnt=123456789 B status=SUCCESS\n" +
-                "elapsed= byte_cnt= status=FAILURE\n" +
-                "average=2743.0 B/ms\n" +
-                "************************************************\n";
+            "elapsed= byte_cnt= status=TIMEOUT\n" +
+            "elapsed=45000 ms byte_cnt=123456789 B status=SUCCESS\n" +
+            "elapsed= byte_cnt= status=FAILURE\n" +
+            "average=2743.0 B/ms\n" +
+            "************************************************\n";
     }
 
     @Test

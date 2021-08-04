@@ -1,10 +1,10 @@
 package com.leapfin.search;
 
 import com.leapfin.processor.DataStream;
-
 import java.nio.charset.StandardCharsets;
 
 public class TestDataStream implements DataStream {
+
     private final String data;
     private long bytesRead;
 

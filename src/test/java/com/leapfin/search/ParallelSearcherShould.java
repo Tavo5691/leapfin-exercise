@@ -1,22 +1,21 @@
 package com.leapfin.search;
 
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 import java.util.List;
-
-import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
 public class ParallelSearcherShould {
 
     @Test
     public void returnAResultForEachWorkerUsedInTheSearch() throws InterruptedException {
-        String timeoutInSeconds = "5";
-        String[] args = { timeoutInSeconds };
-        SearchParameters parameters = new SearchParameters(args);
+        int timeoutInSeconds = 5;
+        String target = "Lpfn";
+        int numberOfWorkers = 10;
 
-        ParallelSearcher searcher = new ParallelSearcher(parameters);
+        ParallelSearcher searcher = new ParallelSearcher(timeoutInSeconds, target, numberOfWorkers);
         List<WorkerResult> resultList = searcher.search();
 
-        assertEquals(10, resultList.size());
+        assertEquals(numberOfWorkers, resultList.size());
     }
 }

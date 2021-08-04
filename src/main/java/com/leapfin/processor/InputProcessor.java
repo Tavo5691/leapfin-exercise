@@ -1,19 +1,19 @@
 package com.leapfin.processor;
 
 import com.leapfin.search.WorkerResult;
-
 import java.nio.charset.StandardCharsets;
 import java.util.concurrent.Callable;
 
 public class InputProcessor implements Callable<WorkerResult> {
+
     private final DataStream dataStream;
     private final String target;
     private final Timer timer;
 
-    public InputProcessor(final DataStream dataStream, final String target, final int timeoutLimitInSeconds) {
+    public InputProcessor(final DataStream dataStream, final String target, final Timer timer) {
         this.dataStream = dataStream;
         this.target = target;
-        this.timer = new Timer(timeoutLimitInSeconds);
+        this.timer = timer;
     }
 
     @Override
